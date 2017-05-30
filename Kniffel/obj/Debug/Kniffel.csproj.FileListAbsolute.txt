@@ -1,0 +1,9 @@
+c:\users\aschl\documents\visual studio 2013\Projects\Kniffel\Kniffel\bin\Debug\Kniffel.exe.config
+c:\users\aschl\documents\visual studio 2013\Projects\Kniffel\Kniffel\bin\Debug\Kniffel.exe
+c:\users\aschl\documents\visual studio 2013\Projects\Kniffel\Kniffel\bin\Debug\Kniffel.pdb
+c:\users\aschl\documents\visual studio 2013\Projects\Kniffel\Kniffel\obj\Debug\Kniffel.csprojResolveAssemblyReference.cache
+c:\users\aschl\documents\visual studio 2013\Projects\Kniffel\Kniffel\obj\Debug\Kniffel.Form1.resources
+c:\users\aschl\documents\visual studio 2013\Projects\Kniffel\Kniffel\obj\Debug\Kniffel.Properties.Resources.resources
+c:\users\aschl\documents\visual studio 2013\Projects\Kniffel\Kniffel\obj\Debug\Kniffel.csproj.GenerateResource.Cache
+c:\users\aschl\documents\visual studio 2013\Projects\Kniffel\Kniffel\obj\Debug\Kniffel.exe
+c:\users\aschl\documents\visual studio 2013\Projects\Kniffel\Kniffel\obj\Debug\Kniffel.pdb
