@@ -188,6 +188,26 @@ namespace Kniffel
             return CalculatedScore;
         }
 
+        public bool CalculateFullHouse(AllDices Dices)
+        {
+            bool ret = false;
+            int[] values = new int[AllDices.NumberOfDices];
+            int valueIndex = 0;
+
+            for (int i = 0; i < AllDices.NumberOfDices; i++)
+            {
+                values[valueIndex] = (int)Dices.GetSingleDiceValue(i);
+                valueIndex++;
+            }
+            Array.Sort(values);
+
+            if ((((values[0] == values[1]) && (values[0] == values[2])) && ((values[3] == values[4]))) || ((values[0] == values[1]) && ((values[2] == values[3]) && (values[3] == values[4]))))
+            {
+                ret = true;
+            }
+            return ret;
+        }
+
         public int CalculateScore(AllDices Dices, ScoreType type)
         {
             int CalculatedScore = 0;
@@ -244,7 +264,10 @@ namespace Kniffel
                     CalculatedScore = CalculateSameSideScore(Dices, 4);
                     break;
                 case ScoreType.FullHouse:
-
+                    if (CalculateFullHouse(Dices) == true)
+                    {
+                        CalculatedScore = (int)SpecialScore.FullHouse;
+                    }
                     break;
                 case ScoreType.LittleRoad:
                     if ((DicesAdjacent(Dices, 4) == true) || (DicesAdjacent(Dices, 4) == true))
