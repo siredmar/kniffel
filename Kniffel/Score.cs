@@ -88,6 +88,72 @@ namespace Kniffel
                 return ret;
         }
 
+        public bool DicesAdjacent(AllDices Dices, int len)
+        {
+            bool ret = false;
+            bool DontRepeat = false;
+            int[] values = new int[AllDices.NumberOfDices];
+            int valueIndex = 0;
+
+            for(int i = 0; i < AllDices.NumberOfDices; i++)
+            {
+                values[valueIndex] = (int)Dices.GetSingleDiceValue(i);
+                valueIndex++;
+            }
+            Array.Sort(values);
+            values = values.Distinct().ToArray();
+
+            if (values.Length >= len)
+            {
+                if (len == 5)
+                {
+                    for (int i = 0; i < len - 1; i++)
+                    {
+                        if (values[i] == values[i + 1] - 1)
+                        {
+                            ret = true;
+                        }
+                        else
+                        {
+                            ret = false;
+                            break;
+                        }
+                    }
+                }
+                else
+                {
+                    for (int rep = 0; rep <= 1; rep++)
+                    {
+                        if (DontRepeat == false)
+                        {
+                            if (values.Length >= (len + rep))
+                            {
+                                for (int i = rep; i < len + rep - 1; i++)
+                                {
+                                    if (values[i] == values[i + 1] - 1)
+                                    {
+                                        ret = true;
+                                        DontRepeat = true;
+                                    }
+                                    else
+                                    {
+                                        ret = false;
+                                        break;
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                ret = false;
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+            return ret;
+        }
+
         public int CalculateSameSideScore(AllDices Dices, int value)
         {
             int CalculatedScore = 0;
@@ -181,18 +247,27 @@ namespace Kniffel
 
                     break;
                 case ScoreType.LittleRoad:
-
+                    if ((DicesAdjacent(Dices, 4) == true) || (DicesAdjacent(Dices, 4) == true))
+                    {
+                        CalculatedScore += (int)SpecialScore.LittleRoad;
+                    }
                     break;
                 case ScoreType.bigRoad:
-
+                    if ((DicesAdjacent(Dices, 5) == true))//  || (DicesAdjacent(Dices, 1, 5) == true))
+                    {
+                        CalculatedScore += (int)SpecialScore.BigRoad;
+                    }
                     break;
                 case ScoreType.Chance:
-
+                    for (int i = 0; i < 5; i++)
+                    {
+                        CalculatedScore += (int)Dices.GetSingleDiceValue(i);
+                    }
                     break;
                 case ScoreType.FiveOfAKind:
                     if (AllDicesSameSide(Dices) == true)
                     {
-                        CalculatedScore += (int)SpecialScore.FiveOfAKind;
+                        CalculatedScore = (int)SpecialScore.FiveOfAKind;
                     }
                     break;
                 default:

@@ -32,6 +32,10 @@ namespace Kniffel
             Console.WriteLine("3 of a kind: " + PlayerScore.CalculateScore(Dices, Score.ScoreType.ThreeOfAKind));
             Console.WriteLine("4 of a kind: " + PlayerScore.CalculateScore(Dices, Score.ScoreType.FourOfAKind));
             Console.WriteLine("5 of a kind: " + PlayerScore.CalculateScore(Dices, Score.ScoreType.FiveOfAKind));
+            Console.WriteLine("Little road: " + PlayerScore.CalculateScore(Dices, Score.ScoreType.LittleRoad));
+            Console.WriteLine("Big road: " + PlayerScore.CalculateScore(Dices, Score.ScoreType.bigRoad));
+            Console.WriteLine("Chance: " + PlayerScore.CalculateScore(Dices, Score.ScoreType.Chance));
+            Console.WriteLine("Full House: " + PlayerScore.CalculateScore(Dices, Score.ScoreType.FullHouse));
 
         }
 

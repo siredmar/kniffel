@@ -29,7 +29,7 @@ namespace Kniffel
         {
             if (RollingEn == true)
             {
-                value = (DiceValue)(rnd.Next(100, 600) / 100);
+                value = (DiceValue)(rnd.Next(1, 7));
             }
         }
 
