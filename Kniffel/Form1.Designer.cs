@@ -62,7 +62,7 @@
             this.btnRoll.Name = "btnRoll";
             this.btnRoll.Size = new System.Drawing.Size(75, 23);
             this.btnRoll.TabIndex = 5;
-            this.btnRoll.Text = "Roll";
+            this.btnRoll.Text = "Roll (1)";
             this.btnRoll.UseVisualStyleBackColor = true;
             this.btnRoll.Click += new System.EventHandler(this.btnRoll_Click);
             // 

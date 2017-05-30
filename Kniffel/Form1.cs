@@ -65,8 +65,10 @@ namespace Kniffel
             UpdateDiceImages();
             Player1.CalculateScoreThisThrow(Dices);
             Player1.NumberOfRolls++;
+            btnRoll.Text = "Roll (" + (Player1.NumberOfRolls +  1) + ")";
             if(Player1.NumberOfRolls >= 3)
             {
+                btnRoll.Text = "Roll (" + Player1.NumberOfRolls + ")";
                 btnRoll.Enabled = false;
                 for (int i = 0; i < AllDices.NumberOfDices; i++)
                 {
@@ -173,6 +175,8 @@ namespace Kniffel
             }
             Dices.ResetDices();
             Player1.NumberOfRolls = 0;
+            btnRoll.Text = "Roll (" + (Player1.NumberOfRolls + 1) + ")";
+
             //Dices.RollAll();
             UpdateDiceImages();
             btnRoll.Enabled = true;
