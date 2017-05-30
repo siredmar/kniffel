@@ -15,7 +15,8 @@ namespace Kniffel
             Three = 3,
             Four = 4,
             Five = 5,
-            Six = 6
+            Six = 6,
+            Empty = 99
         }
         private DiceValue value = DiceValue.One;
         private bool RollingEn = true;
@@ -23,6 +24,10 @@ namespace Kniffel
         public Dice()
         {
 
+        }
+        public void ResetDice()
+        {
+            value = DiceValue.Empty;
         }
 
         public void RollDice(Random rnd)

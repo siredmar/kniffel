@@ -28,11 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.picDice1 = new System.Windows.Forms.PictureBox();
-            this.picDice2 = new System.Windows.Forms.PictureBox();
-            this.picDice3 = new System.Windows.Forms.PictureBox();
-            this.picDice4 = new System.Windows.Forms.PictureBox();
-            this.picDice5 = new System.Windows.Forms.PictureBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.btnRoll = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.gameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -45,73 +41,24 @@
             this.tabPlayer3 = new System.Windows.Forms.TabPage();
             this.tabPlayer4 = new System.Windows.Forms.TabPage();
             this.tabScores = new System.Windows.Forms.TabPage();
-            ((System.ComponentModel.ISupportInitialize)(this.picDice1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picDice2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picDice3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picDice4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picDice5)).BeginInit();
+            this.btnNextPlayer = new System.Windows.Forms.Button();
+            this.picDice5 = new System.Windows.Forms.PictureBox();
+            this.picDice4 = new System.Windows.Forms.PictureBox();
+            this.picDice3 = new System.Windows.Forms.PictureBox();
+            this.picDice2 = new System.Windows.Forms.PictureBox();
+            this.picDice1 = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
             this.tabs.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picDice5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picDice4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picDice3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picDice2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picDice1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // picDice1
-            // 
-            this.picDice1.Image = global::Kniffel.Properties.Resources.three;
-            this.picDice1.Location = new System.Drawing.Point(12, 288);
-            this.picDice1.Name = "picDice1";
-            this.picDice1.Size = new System.Drawing.Size(94, 88);
-            this.picDice1.TabIndex = 0;
-            this.picDice1.TabStop = false;
-            this.picDice1.Tag = "0";
-            this.picDice1.Click += new System.EventHandler(this.picDiceClicked);
-            // 
-            // picDice2
-            // 
-            this.picDice2.Image = global::Kniffel.Properties.Resources.three;
-            this.picDice2.Location = new System.Drawing.Point(112, 288);
-            this.picDice2.Name = "picDice2";
-            this.picDice2.Size = new System.Drawing.Size(94, 88);
-            this.picDice2.TabIndex = 1;
-            this.picDice2.TabStop = false;
-            this.picDice2.Tag = "1";
-            this.picDice2.Click += new System.EventHandler(this.picDiceClicked);
-            // 
-            // picDice3
-            // 
-            this.picDice3.Image = global::Kniffel.Properties.Resources.three;
-            this.picDice3.Location = new System.Drawing.Point(212, 288);
-            this.picDice3.Name = "picDice3";
-            this.picDice3.Size = new System.Drawing.Size(94, 88);
-            this.picDice3.TabIndex = 2;
-            this.picDice3.TabStop = false;
-            this.picDice3.Tag = "2";
-            this.picDice3.Click += new System.EventHandler(this.picDiceClicked);
-            // 
-            // picDice4
-            // 
-            this.picDice4.Image = global::Kniffel.Properties.Resources.three;
-            this.picDice4.Location = new System.Drawing.Point(312, 288);
-            this.picDice4.Name = "picDice4";
-            this.picDice4.Size = new System.Drawing.Size(94, 88);
-            this.picDice4.TabIndex = 3;
-            this.picDice4.TabStop = false;
-            this.picDice4.Tag = "3";
-            this.picDice4.Click += new System.EventHandler(this.picDiceClicked);
-            // 
-            // picDice5
-            // 
-            this.picDice5.Image = global::Kniffel.Properties.Resources.three;
-            this.picDice5.Location = new System.Drawing.Point(412, 288);
-            this.picDice5.Name = "picDice5";
-            this.picDice5.Size = new System.Drawing.Size(94, 88);
-            this.picDice5.TabIndex = 4;
-            this.picDice5.TabStop = false;
-            this.picDice5.Tag = "4";
-            this.picDice5.Click += new System.EventHandler(this.picDiceClicked);
             // 
             // btnRoll
             // 
-            this.btnRoll.Location = new System.Drawing.Point(431, 382);
+            this.btnRoll.Location = new System.Drawing.Point(346, 382);
             this.btnRoll.Name = "btnRoll";
             this.btnRoll.Size = new System.Drawing.Size(75, 23);
             this.btnRoll.TabIndex = 5;
@@ -142,13 +89,13 @@
             // newToolStripMenuItem
             // 
             this.newToolStripMenuItem.Name = "newToolStripMenuItem";
-            this.newToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.newToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
             this.newToolStripMenuItem.Text = "New";
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             // 
             // aboutToolStripMenuItem
@@ -220,11 +167,77 @@
             this.tabScores.Text = "Scores";
             this.tabScores.UseVisualStyleBackColor = true;
             // 
+            // btnNextPlayer
+            // 
+            this.btnNextPlayer.Location = new System.Drawing.Point(427, 382);
+            this.btnNextPlayer.Name = "btnNextPlayer";
+            this.btnNextPlayer.Size = new System.Drawing.Size(75, 23);
+            this.btnNextPlayer.TabIndex = 8;
+            this.btnNextPlayer.Text = "Next";
+            this.btnNextPlayer.UseVisualStyleBackColor = true;
+            this.btnNextPlayer.Click += new System.EventHandler(this.btnNextPlayer_Click);
+            // 
+            // picDice5
+            // 
+            this.picDice5.Image = ((System.Drawing.Image)(resources.GetObject("picDice5.Image")));
+            this.picDice5.Location = new System.Drawing.Point(412, 288);
+            this.picDice5.Name = "picDice5";
+            this.picDice5.Size = new System.Drawing.Size(94, 88);
+            this.picDice5.TabIndex = 4;
+            this.picDice5.TabStop = false;
+            this.picDice5.Tag = "4";
+            this.picDice5.Click += new System.EventHandler(this.picDiceClicked);
+            // 
+            // picDice4
+            // 
+            this.picDice4.Image = ((System.Drawing.Image)(resources.GetObject("picDice4.Image")));
+            this.picDice4.Location = new System.Drawing.Point(312, 288);
+            this.picDice4.Name = "picDice4";
+            this.picDice4.Size = new System.Drawing.Size(94, 88);
+            this.picDice4.TabIndex = 3;
+            this.picDice4.TabStop = false;
+            this.picDice4.Tag = "3";
+            this.picDice4.Click += new System.EventHandler(this.picDiceClicked);
+            // 
+            // picDice3
+            // 
+            this.picDice3.Image = ((System.Drawing.Image)(resources.GetObject("picDice3.Image")));
+            this.picDice3.Location = new System.Drawing.Point(212, 288);
+            this.picDice3.Name = "picDice3";
+            this.picDice3.Size = new System.Drawing.Size(94, 88);
+            this.picDice3.TabIndex = 2;
+            this.picDice3.TabStop = false;
+            this.picDice3.Tag = "2";
+            this.picDice3.Click += new System.EventHandler(this.picDiceClicked);
+            // 
+            // picDice2
+            // 
+            this.picDice2.Image = global::Kniffel.Properties.Resources.empty;
+            this.picDice2.Location = new System.Drawing.Point(112, 288);
+            this.picDice2.Name = "picDice2";
+            this.picDice2.Size = new System.Drawing.Size(94, 88);
+            this.picDice2.TabIndex = 1;
+            this.picDice2.TabStop = false;
+            this.picDice2.Tag = "1";
+            this.picDice2.Click += new System.EventHandler(this.picDiceClicked);
+            // 
+            // picDice1
+            // 
+            this.picDice1.Image = global::Kniffel.Properties.Resources.empty;
+            this.picDice1.Location = new System.Drawing.Point(12, 288);
+            this.picDice1.Name = "picDice1";
+            this.picDice1.Size = new System.Drawing.Size(94, 88);
+            this.picDice1.TabIndex = 0;
+            this.picDice1.TabStop = false;
+            this.picDice1.Tag = "0";
+            this.picDice1.Click += new System.EventHandler(this.picDiceClicked);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(517, 415);
+            this.Controls.Add(this.btnNextPlayer);
             this.Controls.Add(this.tabs);
             this.Controls.Add(this.btnRoll);
             this.Controls.Add(this.picDice5);
@@ -236,14 +249,14 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.picDice1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picDice2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picDice3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picDice4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picDice5)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.tabs.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picDice5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picDice4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picDice3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picDice2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picDice1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -268,6 +281,7 @@
         private System.Windows.Forms.TabPage tabPlayer3;
         private System.Windows.Forms.TabPage tabPlayer4;
         private System.Windows.Forms.TabPage tabScores;
+        private System.Windows.Forms.Button btnNextPlayer;
     }
 }
 

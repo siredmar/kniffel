@@ -64,5 +64,15 @@ namespace Kniffel
         {
             DiceArray[index].RollingEnabled = en;
         }
+
+        public void ResetDices()
+        {
+            for(int i = 0; i < NumberOfDices; i++)
+            {
+                DiceArray[i].ResetDice();
+                DiceValues[i] = Dice.DiceValue.Empty;
+            }
+        }
+
     }
 }

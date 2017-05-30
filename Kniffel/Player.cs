@@ -8,6 +8,13 @@ namespace Kniffel
 {
     class Player
     {
+        private int Rolls;
+
+        public int NumberOfRolls
+        {
+            get { return Rolls; }
+            set { Rolls = value; }
+        }
         private string _PlayerName;
         private Score PlayerScore;
         public string PlayerName
@@ -19,6 +26,7 @@ namespace Kniffel
         {
             PlayerScore = new Score();
             _PlayerName = name;
+            Rolls = 0;
         }
         
         public void CalculateScoreThisThrow(AllDices Dices)

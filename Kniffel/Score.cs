@@ -14,8 +14,6 @@ namespace Kniffel
             FullHouse = 25,
             LittleRoad = 25,
             BigRoad = 35,
-            ThreeOfAKind = 20,
-            FourOfAKind = 30,
             FiveOfAKind = 50,
         }
 
@@ -53,6 +51,7 @@ namespace Kniffel
 
         SingleScoreElement[] ScoreArray = new SingleScoreElement[(int)ScoreType.NumberOfScores];
 
+        #region Calculatios for scores
         public int GetSameDiceWithValue(AllDices AllDices, Dice.DiceValue value)
         {
             int NumberOfSameDice = 0;
@@ -299,6 +298,7 @@ namespace Kniffel
             }
             return CalculatedScore;
         }
+        #endregion
     }
 
 }

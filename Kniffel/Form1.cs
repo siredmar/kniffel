@@ -49,9 +49,25 @@ namespace Kniffel
 
         private void btnRoll_Click(object sender, EventArgs e)
         {
+            if(Player1.NumberOfRolls == 0)
+            {
+                for (int i = 0; i < AllDices.NumberOfDices; i++)
+                {
+                    picDiceArray[i].Enabled = true;
+                }
+            }
             Dices.RollAll();
             UpdateDiceImages();
             Player1.CalculateScoreThisThrow(Dices);
+            Player1.NumberOfRolls++;
+            if(Player1.NumberOfRolls >= 3)
+            {
+                btnRoll.Enabled = false;
+                for (int i = 0; i < AllDices.NumberOfDices; i++)
+                {
+                    picDiceArray[i].Enabled = false;
+                }
+            }
         }
 
         public void UpdateDiceImages()
@@ -121,6 +137,9 @@ namespace Kniffel
                             picDiceArray[i].Image = Kniffel.Properties.Resources.six_shaded;
                         }
                         break;
+                    case Dice.DiceValue.Empty:
+                        picDiceArray[i].Image = Kniffel.Properties.Resources.empty;
+                        break;
                 }
             }
         }
@@ -138,6 +157,21 @@ namespace Kniffel
                 Dices.SetDiceRollable(index, true);
             }
             UpdateDiceImages();
+        }
+
+        private void btnNextPlayer_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < AllDices.NumberOfDices; i++)
+            {
+                Dices.SetDiceRollable(i, true);
+                picDiceArray[i].Enabled = false;
+            }
+            Dices.ResetDices();
+            Player1.NumberOfRolls = 0;
+            //Dices.RollAll();
+            UpdateDiceImages();
+            btnRoll.Enabled = true;
+            
         }
     }
 }
