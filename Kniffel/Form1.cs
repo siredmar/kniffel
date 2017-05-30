@@ -22,12 +22,17 @@ namespace Kniffel
         public Form1()
         {
             InitializeComponent();
+
             Dices = new AllDices();
             picDiceArray[0] = picDice1;
             picDiceArray[1] = picDice2;
             picDiceArray[2] = picDice3;
             picDiceArray[3] = picDice4;
             picDiceArray[4] = picDice5;
+            for (int i = 0; i < AllDices.NumberOfDices; i++)
+            {
+                picDiceArray[i].Enabled = false;
+            }
 
             Player1 = new Player("Edmar");
             Player2 = new Player("Wollnik");
@@ -37,8 +42,8 @@ namespace Kniffel
             PlayerArray[1] = Player2;
             PlayerArray[2] = Player3;
             PlayerArray[3] = Player4;
-
-            Dices.RollAll();
+            Dices.ResetDices();
+            //Dices.RollAll();
             UpdateDiceImages();
             
             tabPlayer1.Text = Player1.PlayerName;
