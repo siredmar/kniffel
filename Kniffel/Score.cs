@@ -10,10 +10,10 @@ namespace Kniffel
     {
         public enum SpecialScore
         {
-            DigitsExtraBonus = 25,
+            DigitsExtraBonus = 35,
             FullHouse = 25,
-            LittleRoad = 25,
-            BigRoad = 35,
+            LittleRoad = 30,
+            BigRoad = 40,
             FiveOfAKind = 50,
         }
 
@@ -187,6 +187,40 @@ namespace Kniffel
             return CalculatedScore;
         }
 
+        public bool CalculateSameSide(AllDices Dices, int value)
+        {
+            bool ret = false;
+            if (GetSameDiceWithValue(Dices, Dice.DiceValue.One) >= value)
+            {
+                ret = true;
+            }
+            else if (GetSameDiceWithValue(Dices, Dice.DiceValue.Two) >= value)
+            {
+                ret = true;
+            }
+            else if (GetSameDiceWithValue(Dices, Dice.DiceValue.Three) >= value)
+            {
+                ret = true;
+            }
+            else if (GetSameDiceWithValue(Dices, Dice.DiceValue.Four) >= value)
+            {
+                ret = true;
+            }
+            else if (GetSameDiceWithValue(Dices, Dice.DiceValue.Five) >= value)
+            {
+                ret = true;
+            }
+            else if (GetSameDiceWithValue(Dices, Dice.DiceValue.Six) >= value)
+            {
+                ret = true;
+            }
+            else
+            {
+
+            }
+            return ret;
+        }
+
         public bool CalculateFullHouse(AllDices Dices)
         {
             bool ret = false;
@@ -257,10 +291,22 @@ namespace Kniffel
                     break;
 
                 case ScoreType.ThreeOfAKind:
-                    CalculatedScore = CalculateSameSideScore(Dices, 3);
+                    if(CalculateSameSide(Dices, 3) == true)
+                    {
+                        for (int i = 0; i < 5; i++)
+                        {
+                            CalculatedScore += (int)Dices.GetSingleDiceValue(i);
+                        }
+                    }
                     break;
                 case ScoreType.FourOfAKind:
-                    CalculatedScore = CalculateSameSideScore(Dices, 4);
+                    if (CalculateSameSide(Dices, 4) == true)
+                    {
+                        for (int i = 0; i < 5; i++)
+                        {
+                            CalculatedScore += (int)Dices.GetSingleDiceValue(i);
+                        }
+                    }
                     break;
                 case ScoreType.FullHouse:
                     if (CalculateFullHouse(Dices) == true)

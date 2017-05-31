@@ -46,7 +46,7 @@ namespace Kniffel
             //Dices.RollAll();
             UpdateDiceImages();
             
-            tabPlayer1.Text = Player1.PlayerName;
+            tabs.Text = Player1.PlayerName;
             tabPlayer2.Text = Player2.PlayerName;
             tabPlayer3.Text = Player3.PlayerName;
             tabPlayer4.Text = Player4.PlayerName;
@@ -181,6 +181,11 @@ namespace Kniffel
             UpdateDiceImages();
             btnRoll.Enabled = true;
             
+        }
+
+        private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
